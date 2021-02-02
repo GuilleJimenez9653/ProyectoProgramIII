@@ -30,11 +30,11 @@ namespace ProyectoVSC{
 
         public void generarCuadro(){
             if(this.getPrincipal() == null){
-                Cuadrado cuadro = new Cuadrado();
+                Cuadro cuadro = new Cuadro();
                 this.setPrincipal(cuadro);
                 this.setTamano(1);
             }else{
-                Cuadrado cuadro = new Cuadrado();
+                Cuadro cuadro = new Cuadro();
                 this.getPrincipal().combinar(cuadro);
             }
         } 

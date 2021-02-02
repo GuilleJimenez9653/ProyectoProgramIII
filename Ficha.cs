@@ -35,6 +35,8 @@ namespace ProyectoVSC{
     }
 
     class FichaSudoku: Ficha{
-        public override bool estaColocado(){}
+        public override bool estaColocado(){
+            return this.isColocado();
+        }
     }
 }

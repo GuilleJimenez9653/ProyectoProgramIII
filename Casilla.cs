@@ -30,12 +30,24 @@ namespace ProyectoVSC{
 
         public bool colocar(Condicion c){return true;}
 
-        public Ficha generarFicha(){}
+        public Ficha generarFicha(){
+            FichaSudoku ficha = new FichaSudoku();
+
+            return ficha;
+        }
 
         public void agregarVecindad(Condicion c, Vecinos v){}
 
-        public int cantidadFila(){}
+        public int cantidadFila(){
+            int retorno = 0;
 
-        public int cantidadColumna(){}
+            return retorno;
+        }
+
+        public int cantidadColumna(){
+            int retorno = 0;
+
+            return retorno;
+        }
     }
 }

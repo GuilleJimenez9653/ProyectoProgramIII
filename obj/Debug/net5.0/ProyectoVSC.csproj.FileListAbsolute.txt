@@ -3,3 +3,14 @@ C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algor
 C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.AssemblyInfoInputs.cache
 C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.AssemblyInfo.cs
 C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.csproj.CoreCompileInputs.cache
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ProyectoVSC.exe
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ProyectoVSC.deps.json
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ProyectoVSC.runtimeconfig.json
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ProyectoVSC.runtimeconfig.dev.json
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ProyectoVSC.dll
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ref\ProyectoVSC.dll
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\bin\Debug\net5.0\ProyectoVSC.pdb
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.dll
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ref\ProyectoVSC.dll
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.pdb
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.genruntimeconfig.cache

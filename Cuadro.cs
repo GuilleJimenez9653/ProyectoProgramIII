@@ -60,7 +60,8 @@ namespace ProyectoVSC{
         }
 
         public void combinar(Cuadro c){
-            int aux = rnd.Next(3);
+            Random r = new Random();
+            int aux = r.Next(3);
             
             if(aux == 0){
                 if(this.getArriba() == null){

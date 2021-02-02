@@ -11,6 +11,10 @@ namespace ProyectoVSC{
     class VecinoCuadrado{
         public void unirVecinos(Condicion c, Forma f){}
 
-        public bool sonVecinos(Forma f){}
+        public bool sonVecinos(Forma f){
+            bool son_vecinos = false;
+
+            return son_vecinos;
+        }
     }
 }
