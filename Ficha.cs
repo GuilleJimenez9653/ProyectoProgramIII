@@ -35,8 +35,17 @@ namespace ProyectoVSC{
     }
 
     class FichaSudoku: Ficha{
+
+        public FichaSudoku(){
+            ConjuntoCuadrado conjuntoCuadrado = new ConjuntoCuadrado();
+            conjuntoCuadrado.generarCuadro();
+            this.setForma(conjuntoCuadrado);
+        }
+
         public override bool estaColocado(){
             return this.isColocado();
         }
+
+
     }
 }
