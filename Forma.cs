@@ -28,19 +28,15 @@ namespace ProyectoVSC{
             this.principal = principal;
         }
 
-        
-
-        public Cuadro generarCuadro(){
-            Random rnd = new Random();
+        public void generarCuadro(){
             if(this.getPrincipal() == null){
                 Cuadrado cuadro = new Cuadrado();
                 this.setPrincipal(cuadro);
                 this.setTamano(1);
             }else{
-                
+                Cuadrado cuadro = new Cuadrado();
+                this.getPrincipal().combinar(cuadro);
             }
-        }
-
-        
+        } 
     }
 }
