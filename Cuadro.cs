@@ -59,5 +59,44 @@ namespace ProyectoVSC{
             this.posicionVecino = posicionVecino;
         }
 
+        public void combinar(Cuadro c){
+            int aux = rnd.Next(3);
+            
+            if(aux == 0){
+                if(this.getArriba() == null){
+                    this.setArriba(c);
+                    c.setAbajo(this); 
+                    return;   
+                }else{
+                    this.getArriba().combinar(c);
+                }
+            }else if(aux == 1){
+                if(this.getDerecha() == null){
+                    this.setDerecha(c);
+                    c.setIzquierda(this);
+                    return;
+                }else{
+                    this.getDerecha().combinar(c);
+                }
+            }else if(aux == 2){
+                if(this.getAbajo() == null){
+                    this.setAbajo(c);
+                    c.setArriba(this);
+                    return;
+                }else{
+                    this.getAbajo().combinar(c);
+                }
+            }else{
+                if(this.getIzquierda() == null){
+                    this.setIzquierda(c);
+                    c.setDerecha(this);
+                    return;
+                }else{
+                    this.getIzquierda().combinar(c);
+                }
+            }
+            
+        }
+
     }
 }

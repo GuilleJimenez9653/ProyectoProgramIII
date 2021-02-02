@@ -3,18 +3,18 @@ using System;
 namespace ProyectoVSC{
 
     abstract class Condicion{
-        public abstract boolean condicion(){}
+        public abstract bool condicion();
     }
 
     class RestriccionSudoku: Condicion{
-        public override boolean condicion(){}
+        public override bool condicion(){}
     }
 
     class ContenidoSudoku: Condicion{
-        public override boolean condicion(){}
+        public override bool condicion(){}
     }
 
     class VecindadSudoku: Condicion{
-        public override boolean condicion(){}
+        public override bool condicion(){}
     }
 }

@@ -1,0 +1,5 @@
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.csprojAssemblyReference.cache
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.AssemblyInfoInputs.cache
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.AssemblyInfo.cs
+C:\Users\guill\OneDrive - est.ucab.edu.ve\Semestre Octubre-Enero 2020-2021\Algoritmos y Programacion III\ProyectoVSC\obj\Debug\net5.0\ProyectoVSC.csproj.CoreCompileInputs.cache

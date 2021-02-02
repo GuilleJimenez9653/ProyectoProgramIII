@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic; 
 
 namespace ProyectoVSC{
     
@@ -27,7 +28,7 @@ namespace ProyectoVSC{
         }
 
 
-        public boolean colocar(Condicion c){return true;}
+        public bool colocar(Condicion c){return true;}
 
         public Ficha generarFicha(){}
 

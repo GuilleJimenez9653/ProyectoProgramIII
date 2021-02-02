@@ -31,9 +31,7 @@ namespace ProyectoVSC{
             this.colocado = colocado;
         }
 
-        public abstract bool estaColocado(){
-            return this.isColocado;
-        }
+        public abstract bool estaColocado();
     }
 
     class FichaSudoku: Ficha{
