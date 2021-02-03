@@ -35,12 +35,14 @@ namespace ProyectoVSC{
             while(aux < 5){
                 if(this.getPrincipal() == null){
                     Cuadro cuadro = new Cuadro();
-                    this.setPrincipal(cuadro);
                     this.setTamano(1);
+                    cuadro.setIndice(this.getTamano());
+                    this.setPrincipal(cuadro);                    
                 }else{
                     Cuadro cuadro = new Cuadro();
-                    this.getPrincipal().combinar(cuadro);
                     this.setTamano(this.getTamano()+1);
+                    cuadro.setIndice(this.getTamano());
+                    this.getPrincipal().combinar(cuadro);
                 }
                 aux = r.Next(3+(this.getTamano()));
             }

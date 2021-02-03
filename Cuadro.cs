@@ -9,18 +9,60 @@ namespace ProyectoVSC{
         private Cuadro abajo;
         private Cuadro izquierda;
         private Cuadro derecha;
-        private Cuadro vecino;
-        private string posicionVecino;
-        private Contenido contenido;
+        private Cuadro vecinoArriba;
+        private Cuadro vecinoAbajo;
+        private Cuadro vecinoIzquierda;
+        private Cuadro vecinoDerecha;
+        private int indice;
 
-        public Contenido getContenido()
+        public Cuadro getVecinoArriba()
         {
-            return this.contenido;
+            return this.vecinoArriba;
         }
 
-        public void setContenido(Contenido contenido)
+        public void setVecinoArriba(Cuadro vecinoArriba)
         {
-            this.contenido = contenido;
+            this.vecinoArriba = vecinoArriba;
+        }
+
+        public Cuadro getVecinoAbajo()
+        {
+            return this.vecinoAbajo;
+        }
+
+        public void setVecinoAbajo(Cuadro vecinoAbajo)
+        {
+            this.vecinoAbajo = vecinoAbajo;
+        }
+
+        public Cuadro getVecinoIzquierda()
+        {
+            return this.vecinoIzquierda;
+        }
+
+        public void setVecinoIzquierda(Cuadro vecinoIzquierda)
+        {
+            this.vecinoIzquierda = vecinoIzquierda;
+        }
+
+        public Cuadro getVecinoDerecha()
+        {
+            return this.vecinoDerecha;
+        }
+
+        public void setVecinoDerecha(Cuadro vecinoDerecha)
+        {
+            this.vecinoDerecha = vecinoDerecha;
+        }
+
+        public int getIndice()
+        {
+            return this.indice;
+        }
+
+        public void setIndice(int indice)
+        {
+            this.indice = indice;
         }
 
         public Cuadro getArriba() {
@@ -53,22 +95,6 @@ namespace ProyectoVSC{
 
         public void setDerecha(Cuadro derecha) {
             this.derecha = derecha;
-        }
-
-        public Cuadro getVecino() {
-            return this.vecino;
-        }
-
-        public void setVecino(Cuadro vecino) {
-            this.vecino = vecino;
-        }
-
-        public string getPosicionVecino() {
-            return this.posicionVecino;
-        }
-
-        public void setPosicionVecino(string posicionVecino) {
-            this.posicionVecino = posicionVecino;
         }
 
         public void combinar(Cuadro c){
@@ -111,43 +137,49 @@ namespace ProyectoVSC{
             
         }
 
-        public void recorrer2(List<Cuadro> vicitados, int total,int tamano){
-            Random r = new Random();
-            ContenidoSudoku c = new ContenidoSudoku();
-            int aux = r.Next(9); //el nueve debe ser sustituido por el maximo que se puede colocar
-            while(!c.condicionEntero(aux)){
-                aux = r.Next(9);
-            }
-            if(total == tamano){
-                Console.WriteLine(total);
+        public void recorrer(int tamano,int indiceActual,List<Cuadro> vicitados){
+            vicitados.Add(this);
+            if(indiceActual == tamano+1){
                 return;
             }
-            if((!vicitados.Contains(this.getArriba()))&&(this.getArriba()!=null)){
-                vicitados.Add(this);
-                total += 1;
-                this.getArriba().recorrer2(vicitados,total,tamano);
-            }else if((!vicitados.Contains(this.getDerecha()))&&(this.getDerecha()!=null)){
-                vicitados.Add(this);
-                total += 1;
-                this.getDerecha().recorrer2(vicitados,total,tamano);
-            }else if((!vicitados.Contains(this.getAbajo()))&&(this.getAbajo()!=null)){
-                vicitados.Add(this);
-                total += 1;
-                this.getAbajo().recorrer2(vicitados,total,tamano);
-            }else if((!vicitados.Contains(this.getIzquierda()))&&(this.getIzquierda()!=null)){
-                vicitados.Add(this);
-                total += 1;
-                this.getIzquierda().recorrer2(vicitados,total,tamano);
-            }else if((vicitados.Contains(this.getIzquierda()))&&(this.getIzquierda()!=null)){
-                this.getIzquierda().recorrer2(vicitados,total,tamano);
-            }else if((vicitados.Contains(this.getAbajo()))&&(this.getAbajo()!=null)){
-                this.getAbajo().recorrer2(vicitados,total,tamano);
-            }else if((vicitados.Contains(this.getDerecha()))&&(this.getDerecha()!=null)){
-                this.getDerecha().recorrer2(vicitados,total,tamano);
-            }else if((vicitados.Contains(this.getArriba()))&&(this.getArriba()!=null)){
-                this.getArriba().recorrer2(vicitados,total,tamano);
+            if(this.getIndice() != indiceActual){
+                if((this.getArriba()!= null)&&(!vicitados.Contains(this.getArriba()))){
+                    this.getArriba().recorrer(tamano,indiceActual,vicitados);
+                }
+                if((this.getDerecha()!= null)&&(!vicitados.Contains(this.getDerecha()))){
+                    this.getDerecha().recorrer(tamano,indiceActual,vicitados);
+                }
+                if((this.getAbajo()!=  null)&&(!vicitados.Contains(this.getAbajo()))){
+                    this.getAbajo().recorrer(tamano,indiceActual,vicitados);
+                }
+                if((this.getIzquierda()!= null)&&(!vicitados.Contains(this.getIzquierda()))){
+                    this.getIzquierda().recorrer(tamano,indiceActual,vicitados);
+                }
+            }else{
+                indiceActual += 1;
+                Console.WriteLine(this.getIndice()+" Indice");
+                vicitados.Clear();
+                if((this.getArriba()!= null)&&(!vicitados.Contains(this.getArriba()))){
+                    this.getArriba().recorrer(tamano,indiceActual,vicitados);
+                }
+                if((this.getDerecha()!= null)&&(!vicitados.Contains(this.getDerecha()))){
+                    this.getDerecha().recorrer(tamano,indiceActual,vicitados);
+                }
+                if((this.getAbajo()!=  null)&&(!vicitados.Contains(this.getAbajo()))){
+                    this.getAbajo().recorrer(tamano,indiceActual,vicitados);
+                }
+                if((this.getIzquierda()!= null)&&(!vicitados.Contains(this.getIzquierda()))){
+                    this.getIzquierda().recorrer(tamano,indiceActual,vicitados);
+                }
             }
         }
-
+    
+        public bool lugarOcupado(Cuadro c, Cuadro vecino){
+            bool estaOcupado = true;
+            if((c == null)&&(vecino == null)){
+                estaOcupado = false;
+            }
+            return estaOcupado;
+        }
     }
 }
