@@ -45,5 +45,7 @@ namespace ProyectoVSC{
                 aux = r.Next(3+(this.getTamano()));
             }
         } 
+
+        
     }
 }

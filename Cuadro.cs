@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ProyectoVSC{
 
@@ -97,6 +98,38 @@ namespace ProyectoVSC{
                 }
             }
             
+        }
+
+        public void recorrer(List<Cuadro> vicitados, int total,int tamano){
+            if(total == tamano){
+                Console.WriteLine(total);
+                return;
+            }
+            if((!vicitados.Contains(this.getArriba()))&&(this.getArriba()!=null)){
+                vicitados.Add(this);
+                total += 1;
+                this.getArriba().recorrer(vicitados,total,tamano);
+            }else if((!vicitados.Contains(this.getDerecha()))&&(this.getDerecha()!=null)){
+                vicitados.Add(this);
+                total += 1;
+                this.getDerecha().recorrer(vicitados,total,tamano);
+            }else if((!vicitados.Contains(this.getAbajo()))&&(this.getAbajo()!=null)){
+                vicitados.Add(this);
+                total += 1;
+                this.getAbajo().recorrer(vicitados,total,tamano);
+            }else if((!vicitados.Contains(this.getIzquierda()))&&(this.getIzquierda()!=null)){
+                vicitados.Add(this);
+                total += 1;
+                this.getIzquierda().recorrer(vicitados,total,tamano);
+            }else if((vicitados.Contains(this.getIzquierda()))&&(this.getIzquierda()!=null)){
+                this.getIzquierda().recorrer(vicitados,total,tamano);
+            }else if((vicitados.Contains(this.getAbajo()))&&(this.getAbajo()!=null)){
+                this.getAbajo().recorrer(vicitados,total,tamano);
+            }else if((vicitados.Contains(this.getDerecha()))&&(this.getDerecha()!=null)){
+                this.getDerecha().recorrer(vicitados,total,tamano);
+            }else if((vicitados.Contains(this.getArriba()))&&(this.getArriba()!=null)){
+                this.getArriba().recorrer(vicitados,total,tamano);
+            }
         }
 
     }
