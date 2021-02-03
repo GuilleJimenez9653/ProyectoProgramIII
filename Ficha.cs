@@ -4,7 +4,6 @@ namespace ProyectoVSC{
     
     abstract class Ficha{
         private Forma forma;
-        private Contenido contenido;
         private bool colocado;
 
         public Forma getForma() {
@@ -13,14 +12,6 @@ namespace ProyectoVSC{
 
         public void setForma(Forma forma) {
             this.forma = forma;
-        }
-
-        public Contenido getContenido() {
-            return this.contenido;
-        }
-
-        public void setContenido(Contenido contenido) {
-            this.contenido = contenido;
         }
 
         public bool isColocado() {

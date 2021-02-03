@@ -20,6 +20,10 @@ namespace ProyectoVSC{
 
             return seCumple;
         }
+        public bool condicionEntero(int num){
+            bool seCumple = true;
+            return seCumple;
+        }
     }
 
     class VecindadSudoku: Condicion{

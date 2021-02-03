@@ -11,6 +11,17 @@ namespace ProyectoVSC{
         private Cuadro derecha;
         private Cuadro vecino;
         private string posicionVecino;
+        private Contenido contenido;
+
+        public Contenido getContenido()
+        {
+            return this.contenido;
+        }
+
+        public void setContenido(Contenido contenido)
+        {
+            this.contenido = contenido;
+        }
 
         public Cuadro getArriba() {
             return this.arriba;
@@ -101,6 +112,12 @@ namespace ProyectoVSC{
         }
 
         public void recorrer2(List<Cuadro> vicitados, int total,int tamano){
+            Random r = new Random();
+            ContenidoSudoku c = new ContenidoSudoku();
+            int aux = r.Next(9); //el nueve debe ser sustituido por el maximo que se puede colocar
+            while(!c.condicionEntero(aux)){
+                aux = r.Next(9);
+            }
             if(total == tamano){
                 Console.WriteLine(total);
                 return;
