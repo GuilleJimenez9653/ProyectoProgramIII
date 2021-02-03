@@ -100,7 +100,7 @@ namespace ProyectoVSC{
             
         }
 
-        public void recorrer(List<Cuadro> vicitados, int total,int tamano){
+        public void recorrer2(List<Cuadro> vicitados, int total,int tamano){
             if(total == tamano){
                 Console.WriteLine(total);
                 return;
@@ -108,27 +108,27 @@ namespace ProyectoVSC{
             if((!vicitados.Contains(this.getArriba()))&&(this.getArriba()!=null)){
                 vicitados.Add(this);
                 total += 1;
-                this.getArriba().recorrer(vicitados,total,tamano);
+                this.getArriba().recorrer2(vicitados,total,tamano);
             }else if((!vicitados.Contains(this.getDerecha()))&&(this.getDerecha()!=null)){
                 vicitados.Add(this);
                 total += 1;
-                this.getDerecha().recorrer(vicitados,total,tamano);
+                this.getDerecha().recorrer2(vicitados,total,tamano);
             }else if((!vicitados.Contains(this.getAbajo()))&&(this.getAbajo()!=null)){
                 vicitados.Add(this);
                 total += 1;
-                this.getAbajo().recorrer(vicitados,total,tamano);
+                this.getAbajo().recorrer2(vicitados,total,tamano);
             }else if((!vicitados.Contains(this.getIzquierda()))&&(this.getIzquierda()!=null)){
                 vicitados.Add(this);
                 total += 1;
-                this.getIzquierda().recorrer(vicitados,total,tamano);
+                this.getIzquierda().recorrer2(vicitados,total,tamano);
             }else if((vicitados.Contains(this.getIzquierda()))&&(this.getIzquierda()!=null)){
-                this.getIzquierda().recorrer(vicitados,total,tamano);
+                this.getIzquierda().recorrer2(vicitados,total,tamano);
             }else if((vicitados.Contains(this.getAbajo()))&&(this.getAbajo()!=null)){
-                this.getAbajo().recorrer(vicitados,total,tamano);
+                this.getAbajo().recorrer2(vicitados,total,tamano);
             }else if((vicitados.Contains(this.getDerecha()))&&(this.getDerecha()!=null)){
-                this.getDerecha().recorrer(vicitados,total,tamano);
+                this.getDerecha().recorrer2(vicitados,total,tamano);
             }else if((vicitados.Contains(this.getArriba()))&&(this.getArriba()!=null)){
-                this.getArriba().recorrer(vicitados,total,tamano);
+                this.getArriba().recorrer2(vicitados,total,tamano);
             }
         }
 

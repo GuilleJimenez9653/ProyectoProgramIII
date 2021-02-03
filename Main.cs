@@ -15,7 +15,7 @@ namespace ProyectoVSC{
 
             int total = 0;
             List<Cuadro> vicitados = new List<Cuadro>();
-            aux.getPrincipal().recorrer(vicitados,total,aux.getTamano());
+            aux.getPrincipal().recorrer2(vicitados,total,aux.getTamano());
         }
     }
 }
