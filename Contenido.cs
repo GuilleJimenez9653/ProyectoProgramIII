@@ -15,21 +15,23 @@ namespace ProyectoVSC{
             return this.contenidoCuadro;
         }
 
-        public void setContenidoCuadro(int indice, int valor)
+        public void setContenidoCuadro(Hashtable contenidoCuadro)
         {
-            this.contenidoCuadro.Add(indice, valor);
+            this.contenidoCuadro = contenidoCuadro;
         }
 
         public void llenar(ContenidoSudoku c, ConjuntoCuadrado conjunto){
             Random r = new Random();
+            Hashtable tablaAux = new Hashtable();
             int aux,i=0;
             while(i<conjunto.getTamano()){
                 aux = r.Next(9);
                 if (c.condicionEntero(aux)){
-                    this.setContenidoCuadro(i,aux);
+                    tablaAux.Add(i+1,aux);
                     i++;
                 }   
             }
+            this.setContenidoCuadro(tablaAux);
         }
     }
 }

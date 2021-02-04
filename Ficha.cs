@@ -4,6 +4,8 @@ namespace ProyectoVSC{
     
     abstract class Ficha{
         private Forma forma;
+        private Contenido contenido;
+
         private bool colocado;
 
         public Forma getForma() {
@@ -22,6 +24,16 @@ namespace ProyectoVSC{
             this.colocado = colocado;
         }
 
+        public Contenido getContenido()
+        {
+            return this.contenido;
+        }
+
+        public void setContenido(Contenido contenido)
+        {
+            this.contenido = contenido;
+        }
+
         public abstract bool estaColocado();
     }
 
@@ -29,8 +41,12 @@ namespace ProyectoVSC{
 
         public FichaSudoku(){
             ConjuntoCuadrado conjuntoCuadrado = new ConjuntoCuadrado();
+            ContenidoSudoku contenidoSudoku = new ContenidoSudoku();
+            Entero entero = new Entero();
             conjuntoCuadrado.generarCuadro();
             this.setForma(conjuntoCuadrado);
+            entero.llenar(contenidoSudoku,conjuntoCuadrado);
+            this.setContenido(entero);
         }
 
         public override bool estaColocado(){

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace ProyectoVSC{
 
@@ -15,6 +16,11 @@ namespace ProyectoVSC{
 
             List<Cuadro> vicitados = new List<Cuadro>();
             aux.getPrincipal().recorrer(aux.getTamano(),1,vicitados);
+
+            Entero aux2 = (Entero)ficha.getContenido();
+            foreach(DictionaryEntry elemento in aux2.getContenidoCuadro()){
+                Console.WriteLine("Indice: "+ elemento.Key+" Contenido: "+ elemento.Value);
+            }
         }
     }
 }
