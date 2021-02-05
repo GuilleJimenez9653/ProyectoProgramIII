@@ -20,13 +20,13 @@ namespace ProyectoVSC{
             this.contenidoCuadro = contenidoCuadro;
         }
 
-        public void llenar(ContenidoSudoku c, ConjuntoCuadrado conjunto){
+        public void llenar(RestriccionSudoku c, ConjuntoCuadrado conjunto){
             Random r = new Random();
             Hashtable tablaAux = new Hashtable();
             int aux,i=0;
             while(i<conjunto.getTamano()){
                 aux = r.Next(9);
-                if (c.condicionEntero(aux)){
+                if (c.condicionContenido(aux)){
                     tablaAux.Add(i+1,aux);
                     i++;
                 }   
