@@ -23,7 +23,7 @@ namespace ProyectoVSC{
             int aux,i=0;
             while(i<conjunto.getTamano()){
                 aux = r.Next(9);
-                if (c.condicionContenido(aux)){
+                if (c.condicionContenido(aux,conjunto)){
                     this.contenidoCuadro.Add(i+1,aux);
                     i++;
                 }   

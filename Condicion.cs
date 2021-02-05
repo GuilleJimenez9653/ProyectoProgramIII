@@ -10,7 +10,7 @@ namespace ProyectoVSC{
         
         bool Condicion.condicion(){return true;}
         
-        public bool condicionContenido(int num){
+        public bool condicionContenido(int num, ConjuntoCuadrado conjunto){
             bool seCumple = true;
             return seCumple;
         }
