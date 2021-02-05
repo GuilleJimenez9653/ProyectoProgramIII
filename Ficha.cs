@@ -41,11 +41,11 @@ namespace ProyectoVSC{
 
         public FichaSudoku(){
             ConjuntoCuadrado conjuntoCuadrado = new ConjuntoCuadrado();
-            RestriccionSudoku contenidoSudoku = new RestriccionSudoku();
+            RestriccionSudoku restriccionSudoku = new RestriccionSudoku();
             Entero entero = new Entero();
             conjuntoCuadrado.generarCuadro();
             this.setForma(conjuntoCuadrado);
-            entero.llenar(contenidoSudoku,conjuntoCuadrado);
+            entero.llenar(restriccionSudoku,conjuntoCuadrado);
             this.setContenido(entero);
         }
 

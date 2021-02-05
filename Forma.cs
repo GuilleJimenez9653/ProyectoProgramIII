@@ -3,9 +3,7 @@ using System.Collections.Generic;
 
 namespace ProyectoVSC{
 
-    abstract class Forma{
-
-    }
+    abstract class Forma{}
 
     class ConjuntoCuadrado: Forma{
         private Cuadro principal;
@@ -29,22 +27,22 @@ namespace ProyectoVSC{
         }
 
         public void generarCuadro(){
-            this.setTamano(0);
+            this.tamano = 0;
             Random r = new Random();
-            int aux = r.Next(3+(this.getTamano()));
+            int aux = r.Next(3+(this.tamano));
             while(aux < 5){
-                if(this.getPrincipal() == null){
+                if(this.principal == null){
                     Cuadro cuadro = new Cuadro();
-                    this.setTamano(1);
-                    cuadro.setIndice(this.getTamano());
-                    this.setPrincipal(cuadro);                    
+                    this.tamano = 1;
+                    cuadro.setIndice(this.tamano);
+                    this.principal = cuadro;                    
                 }else{
                     Cuadro cuadro = new Cuadro();
-                    this.setTamano(this.getTamano()+1);
-                    cuadro.setIndice(this.getTamano());
-                    this.getPrincipal().combinar(cuadro);
+                    this.tamano += 1;
+                    cuadro.setIndice(this.tamano);
+                    this.principal.combinar(cuadro);
                 }
-                aux = r.Next(3+(this.getTamano()));
+                aux = r.Next(3+(this.tamano));
             }
         } 
 

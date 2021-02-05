@@ -3,12 +3,10 @@ using System.Collections;
 
 namespace ProyectoVSC{
 
-    abstract class Contenido{
-
-    }
+    abstract class Contenido{}
 
     class Entero: Contenido{
-        private Hashtable contenidoCuadro;
+        private Hashtable contenidoCuadro = new Hashtable();
 
         public Hashtable getContenidoCuadro()
         {
@@ -22,16 +20,14 @@ namespace ProyectoVSC{
 
         public void llenar(RestriccionSudoku c, ConjuntoCuadrado conjunto){
             Random r = new Random();
-            Hashtable tablaAux = new Hashtable();
             int aux,i=0;
             while(i<conjunto.getTamano()){
                 aux = r.Next(9);
                 if (c.condicionContenido(aux)){
-                    tablaAux.Add(i+1,aux);
+                    this.contenidoCuadro.Add(i+1,aux);
                     i++;
                 }   
             }
-            this.setContenidoCuadro(tablaAux);
         }
     }
 }

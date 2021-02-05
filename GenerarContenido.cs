@@ -15,10 +15,6 @@ namespace ProyectoVSC{
 
 
             return entero_sudoku;
-        }
-
-        
-            
-        
+        }    
     }
 }
