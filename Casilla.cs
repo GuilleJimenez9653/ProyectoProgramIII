@@ -38,16 +38,5 @@ namespace ProyectoVSC{
 
         public void agregarVecindad(Condicion c, Vecinos v){}
 
-        public int cantidadFila(){
-            int retorno = 0;
-
-            return retorno;
-        }
-
-        public int cantidadColumna(){
-            int retorno = 0;
-
-            return retorno;
-        }
     }
 }
