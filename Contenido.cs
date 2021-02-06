@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace ProyectoVSC{
 
@@ -23,7 +24,8 @@ namespace ProyectoVSC{
             int aux,i=0;
             while(i<conjunto.getTamano()){
                 aux = r.Next(9);
-                if (c.condicionContenido(aux,conjunto)){
+                List<Cuadro> visitados = new List<Cuadro>();
+                if (c.condicionContenido(aux,conjunto.getPrincipal().buscarCuadro(i+1,0,visitados))){
                     this.contenidoCuadro.Add(i+1,aux);
                     i++;
                 }   

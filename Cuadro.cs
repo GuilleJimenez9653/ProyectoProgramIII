@@ -15,6 +15,17 @@ namespace ProyectoVSC{
         private Cuadro vecinoDerecha;
         private int indice;
 
+        public Cuadro(){
+            this.arriba = null;
+            this.abajo = null;
+            this.izquierda = null;
+            this.derecha = null;
+            this.vecinoArriba = null;
+            this.vecinoDerecha = null;
+            this.vecinoIzquierda = null;
+            this.vecinoAbajo = null;
+        }
+
         public Cuadro getVecinoArriba()
         {
             return this.vecinoArriba;
