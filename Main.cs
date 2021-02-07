@@ -26,16 +26,20 @@ namespace ProyectoVSC{
                 Console.WriteLine(aux.getPrincipal().buscarCuadro(i,visitados).getIndice()+ " Indice");
                 visitados.Clear();
             }
+            List<int> encontrados = new List<int>();
+            List<Cuadro> visi = new List<Cuadro>();
             for(int i = 1; i<= aux.getTamano();i++){
-                List<int> encontrados = new List<int>();
-                List<Cuadro> visi = new List<Cuadro>();
-                Console.WriteLine("lista columna");
+                encontrados.Clear();
+                visi.Clear();
+                Console.WriteLine("lista columna, indice: "+ aux.getPrincipal().buscarCuadro(i,visi).getIndice());
+                visi.Clear();
                 aux.getPrincipal().buscarCuadro(i,visitados).recorrerColumna(encontrados,visi).ForEach(Console.WriteLine);
             }
             for(int i = 1; i<= aux.getTamano();i++){
-                List<int> encontrados = new List<int>();
-                List<Cuadro> visi = new List<Cuadro>();
-                Console.WriteLine("lista fila");
+                encontrados.Clear();
+                visi.Clear();
+                Console.WriteLine("lista fila, indice: "+aux.getPrincipal().buscarCuadro(i,visi).getIndice());
+                visi.Clear();
                 aux.getPrincipal().buscarCuadro(i,visitados).recorrerFila(encontrados,visi).ForEach(Console.WriteLine);
             }
         }

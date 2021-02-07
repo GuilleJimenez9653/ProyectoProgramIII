@@ -33,7 +33,7 @@ namespace ProyectoVSC{
                 visitados.Clear();
                 aux3 = conjunto.getPrincipal().buscarCuadro(i+1,visitados).recorrerColumna(listaAux,visitados).Count;
                 //Console.WriteLine(aux2);
-                aux = r.Next(1,9);
+                aux = r.Next(1,aux3);
                 visitados.Clear();
                 if (c.condicionContenido(aux,conjunto.getPrincipal().buscarCuadro(i+1,visitados))){
                     this.contenidoCuadro.Add(i+1,aux);
