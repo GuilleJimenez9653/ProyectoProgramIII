@@ -8,10 +8,10 @@ namespace ProyectoVSC{
         public abstract bool sonVecinos(Forma f);
     }
 
-    class VecinoCuadrado{
-        public void unirVecinos(Condicion c, Forma f){}
+    class VecinoCuadrado: Vecinos{
+        public override void unirVecinos(Condicion c, Forma f){}
 
-        public bool sonVecinos(Forma f){
+        public override bool sonVecinos(Forma f){
             bool son_vecinos = false;
 
             return son_vecinos;
