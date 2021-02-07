@@ -196,23 +196,27 @@ namespace ProyectoVSC{
             return estaOcupado;
         }
 
-        public Cuadro buscarCuadro(int indice,List<Cuadro> visitados){
+        public Cuadro buscarCuadro(int indice,List<Cuadro> visitados,Cuadro cuadro){
             visitados.Add(this);
-            Cuadro cuadro = new Cuadro();
+            //Cuadro cuadro = new Cuadro();
             if(this.indice != indice){
                 if((this.arriba!= null)&&(!visitados.Contains(this.arriba))){
-                    cuadro = this.arriba.buscarCuadro(indice,visitados);
+                    cuadro = this.arriba.buscarCuadro(indice,visitados,cuadro);
                 }
                 if((this.derecha!= null)&&(!visitados.Contains(this.derecha))){
-                    cuadro = this.derecha.buscarCuadro(indice,visitados);
+                    cuadro = this.derecha.buscarCuadro(indice,visitados,cuadro);
                 }
                 if((this.abajo!=  null)&&(!visitados.Contains(this.abajo))){
-                    cuadro = this.abajo.buscarCuadro(indice,visitados);
+                    cuadro = this.abajo.buscarCuadro(indice,visitados,cuadro);
                 }
                 if((this.izquierda!= null)&&(!visitados.Contains(this.izquierda))){
-                    cuadro = this.izquierda.buscarCuadro(indice,visitados);
+                    cuadro = this.izquierda.buscarCuadro(indice,visitados,cuadro);
                 }
             }else{
+                //Console.WriteLine(this.indice + " indice en BuscarCuadro");
+                return this;
+            }
+            if(this.indice == indice){
                 return this;
             }
             return cuadro;

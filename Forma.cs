@@ -30,7 +30,7 @@ namespace ProyectoVSC{
             this.tamano = 0;
             Random r = new Random();
             int aux = r.Next(3+(this.tamano));
-            while(aux < 3){
+            while(aux < 4){
                 if(this.principal == null){
                     Cuadro cuadro = new Cuadro();
                     this.tamano = 1;
@@ -42,8 +42,13 @@ namespace ProyectoVSC{
                     cuadro.setIndice(this.tamano);
                     this.principal.combinar(cuadro);
                 }
-                aux = r.Next(3+(this.tamano));
+                if (this.tamano == 4){
+                    aux = 5;
+                }else{
+                    aux = r.Next(3+(this.tamano));
+                }
             }
+
         }   
     }
 }

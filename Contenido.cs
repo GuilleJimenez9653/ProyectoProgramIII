@@ -28,19 +28,24 @@ namespace ProyectoVSC{
             int aux2=0;
             int aux3=0;
             while(i<conjunto.getTamano()){
-                //listaAux = conjunto.getPrincipal().buscarCuadro(i+1,1,visitados).recorrerFila(encontrados,visitados);
-                aux2 = conjunto.getPrincipal().buscarCuadro(i+1,visitados).recorrerFila(encontrados,visitados).Count;
+                Cuadro cuadro = new Cuadro();
+                aux2 = conjunto.getPrincipal().buscarCuadro(i+1,visitados,cuadro).recorrerFila(encontrados,visitados).Count;
                 visitados.Clear();
-                aux3 = conjunto.getPrincipal().buscarCuadro(i+1,visitados).recorrerColumna(listaAux,visitados).Count;
-                //Console.WriteLine(aux2);
-                aux = r.Next(1,aux3);
+                aux3 = conjunto.getPrincipal().buscarCuadro(i+1,visitados,cuadro).recorrerColumna(listaAux,visitados).Count;
+                if(aux2 < aux3){
+                    aux = r.Next(aux2);
+                }else if(aux2 > aux3){
+                    aux = r.Next(aux3);
+                }else{
+                    aux = r.Next(aux3);
+                }
+                aux = r.Next(aux3);
                 visitados.Clear();
-                if (c.condicionContenido(aux,conjunto.getPrincipal().buscarCuadro(i+1,visitados))){
+                if (c.condicionContenido(aux,conjunto.getPrincipal().buscarCuadro(i+1,visitados,cuadro)) && aux!=0){
                     this.contenidoCuadro.Add(i+1,aux);
                     i++;
                 }
                 visitados.Clear();
-                 
             }
         }
     }
