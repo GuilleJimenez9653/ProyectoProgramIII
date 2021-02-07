@@ -116,6 +116,7 @@ namespace ProyectoVSC{
                 if(this.arriba == null){
                     this.arriba = c;
                     c.setAbajo(this); 
+                    Console.WriteLine("this.arriba = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;   
                 }else{
                     this.arriba.combinar(c);
@@ -124,6 +125,7 @@ namespace ProyectoVSC{
                 if(this.derecha == null){
                     this.derecha = c;
                     c.setIzquierda(this);
+                    Console.WriteLine("this.derecha = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;
                 }else{
                     this.derecha.combinar(c);
@@ -132,6 +134,7 @@ namespace ProyectoVSC{
                 if(this.abajo == null){
                     this.abajo = c;
                     c.setArriba(this);
+                    Console.WriteLine("this.abajo = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;
                 }else{
                     this.abajo.combinar(c);
@@ -140,6 +143,7 @@ namespace ProyectoVSC{
                 if(this.izquierda == null){
                     this.izquierda = c;
                     c.setDerecha(this);
+                    Console.WriteLine("this.izquierda = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;
                 }else{
                     this.izquierda.combinar(c);
@@ -168,7 +172,6 @@ namespace ProyectoVSC{
                 }
             }else{
                 indiceActual += 1;
-                Console.WriteLine(this.indice+" Indice");
                 visitados.Clear();
                 if((this.arriba!= null)&&(!visitados.Contains(this.arriba))){
                     this.arriba.recorrer(tamano,indiceActual,visitados);
@@ -193,41 +196,26 @@ namespace ProyectoVSC{
             return estaOcupado;
         }
 
-        public Cuadro buscarCuadro(int indice, int indiceActual,List<Cuadro> visitados){
+        public Cuadro buscarCuadro(int indice,List<Cuadro> visitados){
             visitados.Add(this);
-            if(indiceActual == indice){
-                return this;
-            }
-            if(this.indice != indiceActual){
+            Cuadro cuadro = new Cuadro();
+            if(this.indice != indice){
                 if((this.arriba!= null)&&(!visitados.Contains(this.arriba))){
-                    this.arriba.recorrer(indice,indiceActual,visitados);
+                    cuadro = this.arriba.buscarCuadro(indice,visitados);
                 }
                 if((this.derecha!= null)&&(!visitados.Contains(this.derecha))){
-                    this.derecha.recorrer(indice,indiceActual,visitados);
+                    cuadro = this.derecha.buscarCuadro(indice,visitados);
                 }
                 if((this.abajo!=  null)&&(!visitados.Contains(this.abajo))){
-                    this.abajo.recorrer(indice,indiceActual,visitados);
+                    cuadro = this.abajo.buscarCuadro(indice,visitados);
                 }
                 if((this.izquierda!= null)&&(!visitados.Contains(this.izquierda))){
-                    this.izquierda.recorrer(indice,indiceActual,visitados);
+                    cuadro = this.izquierda.buscarCuadro(indice,visitados);
                 }
             }else{
-                indiceActual += 1;
-                visitados.Clear();
-                if((this.arriba!= null)&&(!visitados.Contains(this.arriba))){
-                    this.arriba.recorrer(indice,indiceActual,visitados);
-                }
-                if((this.derecha!= null)&&(!visitados.Contains(this.derecha))){
-                    this.derecha.recorrer(indice,indiceActual,visitados);
-                }
-                if((this.abajo!=  null)&&(!visitados.Contains(this.abajo))){
-                    this.abajo.recorrer(indice,indiceActual,visitados);
-                }
-                if((this.izquierda!= null)&&(!visitados.Contains(this.izquierda))){
-                    this.izquierda.recorrer(indice,indiceActual,visitados);
-                }
+                return this;
             }
-            return this;
+            return cuadro;
         }
 
         public List<int> recorrerFila(List<int> encontrados,List<Cuadro> visitado){

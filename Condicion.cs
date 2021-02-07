@@ -19,7 +19,7 @@ namespace ProyectoVSC{
             fila = cuadro.recorrerFila(fila,visitados);
             visitados.Clear();
             columna = cuadro.recorrerColumna(columna,visitados);
-            if(fila.Contains(num)&&columna.Contains(num)){
+            if(fila.Contains(num)||columna.Contains(num)){
                 seCumple = false;
             }
             return seCumple;
