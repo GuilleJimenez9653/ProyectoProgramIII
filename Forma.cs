@@ -33,7 +33,6 @@ namespace ProyectoVSC{
             while(aux < 4){
                 if(this.principal == null){
                     Cuadro cuadro = new Cuadro();
-                    this.tamano = 1;
                     cuadro.setIndice(this.tamano);
                     this.principal = cuadro;                    
                 }else{
@@ -48,7 +47,6 @@ namespace ProyectoVSC{
                     aux = r.Next(3+(this.tamano));
                 }
             }
-
-        }   
+        }  
     }
 }

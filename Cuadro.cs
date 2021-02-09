@@ -116,7 +116,6 @@ namespace ProyectoVSC{
                 if(this.arriba == null){
                     this.arriba = c;
                     c.setAbajo(this); 
-                    Console.WriteLine("this.arriba = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;   
                 }else{
                     this.arriba.combinar(c);
@@ -125,7 +124,6 @@ namespace ProyectoVSC{
                 if(this.derecha == null){
                     this.derecha = c;
                     c.setIzquierda(this);
-                    Console.WriteLine("this.derecha = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;
                 }else{
                     this.derecha.combinar(c);
@@ -134,7 +132,6 @@ namespace ProyectoVSC{
                 if(this.abajo == null){
                     this.abajo = c;
                     c.setArriba(this);
-                    Console.WriteLine("this.abajo = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;
                 }else{
                     this.abajo.combinar(c);
@@ -143,7 +140,6 @@ namespace ProyectoVSC{
                 if(this.izquierda == null){
                     this.izquierda = c;
                     c.setDerecha(this);
-                    Console.WriteLine("this.izquierda = c, c.indice "+c.indice+" this,indice "+ this.indice);
                     return;
                 }else{
                     this.izquierda.combinar(c);
@@ -213,7 +209,6 @@ namespace ProyectoVSC{
                     cuadro = this.izquierda.buscarCuadro(indice,visitados,cuadro);
                 }
             }else{
-                //Console.WriteLine(this.indice + " indice en BuscarCuadro");
                 return this;
             }
             if(this.indice == indice){
@@ -255,5 +250,7 @@ namespace ProyectoVSC{
             }
             return encontrados;
         }
+
+        
     }
 }

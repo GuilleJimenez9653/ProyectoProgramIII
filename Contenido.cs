@@ -29,9 +29,9 @@ namespace ProyectoVSC{
             int aux3=0;
             while(i<conjunto.getTamano()){
                 Cuadro cuadro = new Cuadro();
-                aux2 = conjunto.getPrincipal().buscarCuadro(i+1,visitados,cuadro).recorrerFila(encontrados,visitados).Count;
+                aux2 = conjunto.getPrincipal().buscarCuadro(i,visitados,cuadro).recorrerFila(encontrados,visitados).Count;
                 visitados.Clear();
-                aux3 = conjunto.getPrincipal().buscarCuadro(i+1,visitados,cuadro).recorrerColumna(listaAux,visitados).Count;
+                aux3 = conjunto.getPrincipal().buscarCuadro(i,visitados,cuadro).recorrerColumna(listaAux,visitados).Count;
                 if(aux2 < aux3){
                     aux = r.Next(aux2);
                 }else if(aux2 > aux3){
@@ -42,7 +42,7 @@ namespace ProyectoVSC{
                 aux = r.Next(aux3);
                 visitados.Clear();
                 if (c.condicionContenido(aux,conjunto.getPrincipal().buscarCuadro(i+1,visitados,cuadro)) && aux!=0){
-                    this.contenidoCuadro.Add(i+1,aux);
+                    this.contenidoCuadro.Add(i,aux);
                     i++;
                 }
                 visitados.Clear();
