@@ -7,6 +7,7 @@ namespace ProyectoVSC{
 
         private EnlaceConjunto enlaceConjunto;
         private EnlaceVecino enlaceVecino;
+        private Posicion posicion;
         private int indice;
 
         public Cuadro(){
@@ -42,6 +43,16 @@ namespace ProyectoVSC{
         public void setIndice(int indice)
         {
             this.indice = indice;
+        }
+
+        public Posicion getPosicion()
+        {
+            return this.posicion;
+        }
+
+        public void setPosicion(Posicion posicion)
+        {
+            this.posicion = posicion;
         }
 
         public void combinar(Cuadro c){
