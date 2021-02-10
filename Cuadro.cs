@@ -13,6 +13,7 @@ namespace ProyectoVSC{
         public Cuadro(){
             enlaceVecino = new EnlaceVecino();
             enlaceConjunto = new EnlaceConjunto();
+            posicion = new Posicion();
         }
 
         public EnlaceConjunto getEnlaceConjunto()
@@ -55,41 +56,64 @@ namespace ProyectoVSC{
             this.posicion = posicion;
         }
 
-        public void combinar(Cuadro c){
+        public void combinar(Cuadro c,int x, int y){
             Random r = new Random();
+            Posicion posicionAux = new Posicion();
+            List<Cuadro> visitados = new List<Cuadro>();
+            Cuadro cuadro = new Cuadro();
             int aux = r.Next(3);
             
             if(aux == 0){
-                if(this.enlaceConjunto.getArriba() == null){
+                y += 1;
+                posicionAux.setX(x);
+                posicionAux.setY(y);
+                if(this.enlaceConjunto.getArriba() == null && this.buscarCoordenadas(posicionAux,visitados, cuadro) == null){
                     this.enlaceConjunto.setArriba(c);
-                    c.getEnlaceConjunto().setAbajo(this); 
+                    c.getEnlaceConjunto().setAbajo(this);
+                    c.getPosicion().setX(x);
+                    c.getPosicion().setY(y); 
                     return;   
-                }else{
-                    this.enlaceConjunto.getArriba().combinar(c);
+                }else{ 
+                    this.enlaceConjunto.getArriba().combinar(c,x,y);
                 }
             }else if(aux == 1){
-                if(this.enlaceConjunto.getDerecha() == null){
+                x += 1;
+                posicionAux.setX(x);
+                posicionAux.setY(y);
+                if(this.enlaceConjunto.getDerecha() == null && this.buscarCoordenadas(posicionAux,visitados, cuadro) == null){
                     this.enlaceConjunto.setDerecha(c);
                     c.getEnlaceConjunto().setIzquierda(this);
+                    c.getPosicion().setX(x);
+                    c.getPosicion().setY(y);
                     return;
-                }else{
-                    this.enlaceConjunto.getDerecha().combinar(c);
+                }else{           
+                    this.enlaceConjunto.getDerecha().combinar(c,x,y);
                 }
             }else if(aux == 2){
-                if(this.enlaceConjunto.getAbajo() == null){
+                y -= 1;
+                posicionAux.setX(x);
+                posicionAux.setY(y);
+                if(this.enlaceConjunto.getAbajo() == null && this.buscarCoordenadas(posicionAux,visitados, cuadro) == null){
                     this.enlaceConjunto.setAbajo(c);
                     c.getEnlaceConjunto().setArriba(this);
+                    c.getPosicion().setX(x);
+                    c.getPosicion().setY(y);
                     return;
                 }else{
-                    this.enlaceConjunto.getAbajo().combinar(c);
+                    this.enlaceConjunto.getAbajo().combinar(c,x,y);
                 }
             }else{
-                if(this.enlaceConjunto.getIzquierda() == null){
+                x -= 1;
+                posicionAux.setX(x);
+                posicionAux.setY(y);
+                if(this.enlaceConjunto.getIzquierda() == null && this.buscarCoordenadas(posicionAux,visitados, cuadro) == null){
                     this.enlaceConjunto.setIzquierda(c);
                     c.getEnlaceConjunto().setDerecha(this);
+                    c.getPosicion().setX(x);
+                    c.getPosicion().setY(y);
                     return;
-                }else{
-                    this.enlaceConjunto.getIzquierda().combinar(c);
+                }else{                  
+                    this.enlaceConjunto.getIzquierda().combinar(c,x,y);
                 }
             }
             
@@ -190,6 +214,28 @@ namespace ProyectoVSC{
             return encontrados;
         }
 
-        
+        public Cuadro buscarCoordenadas(Posicion posicion,List<Cuadro> visitados,Cuadro cuadro){
+            visitados.Add(this);
+            if(this.posicion.getX() != posicion.getX() || this.posicion.getY() != posicion.getY()){
+                if((this.enlaceConjunto.getArriba()!= null)&&(!visitados.Contains(this.enlaceConjunto.getArriba()))){
+                    cuadro = this.enlaceConjunto.getArriba().buscarCoordenadas(posicion,visitados,cuadro);
+                }
+                if((this.enlaceConjunto.getDerecha()!= null)&&(!visitados.Contains(this.enlaceConjunto.getDerecha()))){
+                    cuadro = this.enlaceConjunto.getDerecha().buscarCoordenadas(posicion,visitados,cuadro);
+                }
+                if((this.enlaceConjunto.getAbajo()!=  null)&&(!visitados.Contains(this.enlaceConjunto.getAbajo()))){
+                    cuadro = this.enlaceConjunto.getAbajo().buscarCoordenadas(posicion,visitados,cuadro);
+                }
+                if((this.enlaceConjunto.getIzquierda()!= null)&&(!visitados.Contains(this.enlaceConjunto.getIzquierda()))){
+                    cuadro = this.enlaceConjunto.getIzquierda().buscarCoordenadas(posicion,visitados,cuadro);
+                }
+            }else{
+                return this;
+            }
+            if(this.posicion.getX() != posicion.getX() && this.posicion.getY() != posicion.getY()){
+                return this;
+            }
+            return null;
+        }
     }
 }

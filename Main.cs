@@ -26,6 +26,10 @@ namespace ProyectoVSC{
                 Cuadro cuadro = new Cuadro();
                 Console.WriteLine(aux.getPrincipal().buscarCuadro(i,visitados,cuadro).getIndice()+ " Indice");
                 visitados.Clear();
+                Console.WriteLine(aux.getPrincipal().buscarCuadro(i,visitados,cuadro).getPosicion().getX()+ " X");
+                visitados.Clear();
+                Console.WriteLine(aux.getPrincipal().buscarCuadro(i,visitados,cuadro).getPosicion().getY()+ " Y");
+                visitados.Clear();
             }
             visitados.Clear();
             //Console.WriteLine(aux.getPrincipal().buscarCuadro(aux.getTamano(),visitados).getIndice()+ " Indice tamano");

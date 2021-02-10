@@ -33,13 +33,15 @@ namespace ProyectoVSC{
             while(aux < 4){
                 if(this.principal == null){
                     Cuadro cuadro = new Cuadro();
+                    cuadro.getPosicion().setX(0);
+                    cuadro.getPosicion().setY(0);
                     cuadro.setIndice(this.tamano);
                     this.principal = cuadro;                    
                 }else{
                     Cuadro cuadro = new Cuadro();
                     this.tamano += 1;
                     cuadro.setIndice(this.tamano);
-                    this.principal.combinar(cuadro);
+                    this.principal.combinar(cuadro,0,0);
                 }
                 if (this.tamano == 4){
                     aux = 5;
