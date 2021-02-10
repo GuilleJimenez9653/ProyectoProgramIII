@@ -49,7 +49,8 @@ namespace ProyectoVSC{
                     aux = r.Next(3+(this.tamano));
                 }
             }
-            for(int i =0; i<this.tamano;i++){
+            this.tamano += 1;
+            for(int i =0; i<=this.tamano;i++){
                 this.enlacesConjunto(i);
             }
         }  
