@@ -49,6 +49,68 @@ namespace ProyectoVSC{
                     aux = r.Next(3+(this.tamano));
                 }
             }
+            for(int i =0; i<this.tamano;i++){
+                this.enlacesConjunto(i);
+            }
         }  
+
+        public void enlacesConjunto(int i){
+            List<Cuadro> visitados = new List<Cuadro>();
+            Posicion posicionAux = new Posicion();
+            Cuadro cuadroAux = new Cuadro();
+            Cuadro cuadro = new Cuadro();
+            cuadro = this.principal.buscarCuadro(i,visitados,cuadroAux);
+            visitados.Clear();cuadroAux = null;
+            posicionAux.setX(cuadro.getPosicion().getX());
+            posicionAux.setY(cuadro.getPosicion().getY());
+            if(cuadro.getEnlaceConjunto().getArriba() == null){
+                posicionAux.setY(posicionAux.getY()+1);
+                if(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();cuadroAux = null;
+                    cuadro.getEnlaceConjunto().setArriba(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();cuadroAux = null;
+                    this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceConjunto().setAbajo(cuadro);
+                }
+                visitados.Clear();cuadroAux = null;
+                posicionAux.setX(cuadro.getPosicion().getX());
+                posicionAux.setY(cuadro.getPosicion().getY());
+            }
+            if(cuadro.getEnlaceConjunto().getDerecha() == null){
+                posicionAux.setX(posicionAux.getX()+1);
+                if(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();cuadroAux = null;
+                    cuadro.getEnlaceConjunto().setDerecha(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();cuadroAux = null;
+                    this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceConjunto().setIzquierda(cuadro);
+                }
+                visitados.Clear();cuadroAux = null;
+                posicionAux.setX(cuadro.getPosicion().getX());
+                posicionAux.setY(cuadro.getPosicion().getY());
+            }
+            if(cuadro.getEnlaceConjunto().getAbajo() == null){
+                posicionAux.setY(posicionAux.getY()-1);
+                if(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();cuadroAux = null;
+                    cuadro.getEnlaceConjunto().setAbajo(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();cuadroAux = null;
+                    this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceConjunto().setArriba(cuadro);
+                }
+                visitados.Clear();cuadroAux = null;
+                posicionAux.setX(cuadro.getPosicion().getX());
+                posicionAux.setY(cuadro.getPosicion().getY());
+            }
+            if(cuadro.getEnlaceConjunto().getAbajo() == null){
+                posicionAux.setX(posicionAux.getX()-1);
+                if(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();cuadroAux = null;
+                    cuadro.getEnlaceConjunto().setIzquierda(this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();cuadroAux = null;
+                    this.principal.buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceConjunto().setDerecha(cuadro);
+                }
+                visitados.Clear();cuadroAux = null;
+                posicionAux.setX(cuadro.getPosicion().getX());
+                posicionAux.setY(cuadro.getPosicion().getY());
+            }
+        }
     }
 }

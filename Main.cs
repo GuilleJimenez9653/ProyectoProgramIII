@@ -15,7 +15,6 @@ namespace ProyectoVSC{
             Console.WriteLine(aux.getTamano()+" Tamano");
 
             List<Cuadro> visitados = new List<Cuadro>();
-            aux.getPrincipal().recorrer(aux.getTamano(),1,visitados);
 
             Entero aux2 = (Entero)ficha.getContenido();
             foreach(DictionaryEntry elemento in aux2.getContenidoCuadro()){

@@ -232,7 +232,7 @@ namespace ProyectoVSC{
             }else{
                 return this;
             }
-            if(this.posicion.getX() != posicion.getX() && this.posicion.getY() != posicion.getY()){
+            if(this.posicion.getX() == posicion.getX() && this.posicion.getY() == posicion.getY()){
                 return this;
             }
             return null;
