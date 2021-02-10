@@ -21,7 +21,7 @@ namespace ProyectoVSC{
                 Console.WriteLine("Indice: "+ elemento.Key+" Contenido: "+ elemento.Value);
             }
             visitados.Clear();
-            for(int i = 0; i < aux.getTamano();i++){
+            /*for(int i = 0; i < aux.getTamano();i++){
                 Cuadro cuadro = new Cuadro();
                 Console.WriteLine(aux.getPrincipal().buscarCuadro(i,visitados,cuadro).getIndice()+ " Indice");
                 visitados.Clear();
@@ -29,7 +29,7 @@ namespace ProyectoVSC{
                 visitados.Clear();
                 Console.WriteLine(aux.getPrincipal().buscarCuadro(i,visitados,cuadro).getPosicion().getY()+ " Y");
                 visitados.Clear();
-            }
+            }*/
             visitados.Clear();
             //Console.WriteLine(aux.getPrincipal().buscarCuadro(aux.getTamano(),visitados).getIndice()+ " Indice tamano");
             List<int> encontrados = new List<int>();
