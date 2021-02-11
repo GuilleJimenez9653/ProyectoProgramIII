@@ -13,7 +13,10 @@ namespace ProyectoVSC{
 
         public override bool sonVecinos(Forma f){
             bool son_vecinos = false;
-
+            if (son_vecinos) {
+               son_vecinos = false; 
+            }else{
+               son_vecinos = true;
             return son_vecinos;
         }
     }
