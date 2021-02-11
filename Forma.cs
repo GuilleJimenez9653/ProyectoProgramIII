@@ -113,5 +113,15 @@ namespace ProyectoVSC{
                 posicionAux.setY(cuadro.getPosicion().getY());
             }
         }
+
+        public List<Posicion> listaPosiciones(){
+            List<Cuadro> visitados = new List<Cuadro>();
+            List<Posicion> posiciones = new List<Posicion>();
+            Cuadro cuadroAux = new Cuadro();
+            for(int i = 0; i < this.tamano; i++){
+                posiciones.Add(this.principal.buscarCuadro(i,visitados,cuadroAux).getPosicion());visitados.Clear();
+            }
+            return posiciones;
+        }
     }
 }

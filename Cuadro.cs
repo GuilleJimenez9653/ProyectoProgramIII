@@ -157,7 +157,6 @@ namespace ProyectoVSC{
     
         public Cuadro buscarCuadro(int indice,List<Cuadro> visitados,Cuadro cuadro){
             visitados.Add(this);
-            //Cuadro cuadro = new Cuadro();
             if(this.indice != indice){
                 if((this.enlaceConjunto.getArriba()!= null)&&(!visitados.Contains(this.enlaceConjunto.getArriba()))){
                     cuadro = this.enlaceConjunto.getArriba().buscarCuadro(indice,visitados,cuadro);
