@@ -17,7 +17,6 @@ namespace ProyectoVSC{
 
             return son_vecinos;
         }
-
         public void unir(ConjuntoCuadrado conjunto1, ConjuntoCuadrado conjunto2){
             List<Cuadro> visitados = new List<Cuadro>();
             List<Posicion> posiciones1 = new List<Posicion>();
@@ -144,3 +143,4 @@ namespace ProyectoVSC{
         }
     }   
 }
+
