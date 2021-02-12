@@ -93,8 +93,6 @@ namespace ProyectoVSC{
                     lugar.setX(lugar.getX()+1);
                 }
             }
-
         }
-
     }   
 }

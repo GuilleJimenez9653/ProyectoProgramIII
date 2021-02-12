@@ -52,7 +52,5 @@ namespace ProyectoVSC{
         public override bool estaColocado(){
             return this.isColocado();
         }
-
-
     }
 }
