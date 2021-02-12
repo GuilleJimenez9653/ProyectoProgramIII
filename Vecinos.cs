@@ -18,7 +18,55 @@ namespace ProyectoVSC{
             return son_vecinos;
         }
 
-        public void unir(ConjuntoCuadrado conjunto1, ConjuntoCuadrado conjunto2){}
+        public void unir(ConjuntoCuadrado conjunto1, ConjuntoCuadrado conjunto2){
+            List<Cuadro> visitados = new List<Cuadro>();
+            List<Posicion> posiciones1 = new List<Posicion>();
+            List<Posicion> posiciones2 = new List<Posicion>();
+            Cuadro cuadroAux = new Cuadro();
+            Posicion posicionAux = new Posicion();
+            posiciones1 = conjunto1.listaPosiciones();
+            posiciones2 = conjunto2.listaPosiciones();
+            foreach(Posicion lugar in posiciones1){
+                Cuadro cuadro = new Cuadro();
+                cuadro = conjunto1.getPrincipal().buscarCoordenadas(lugar,visitados,cuadroAux);
+                posicionAux.setX(cuadro.getPosicion().getX());
+                posicionAux.setY(cuadro.getPosicion().getY()+1);
+                if(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();
+                    cuadro.getEnlaceVecino().setVecinoArriba(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();
+                    conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceVecino().setVecinoAbajo(cuadro);
+                }
+                visitados.Clear();
+                posicionAux.setX(cuadro.getPosicion().getX());
+                posicionAux.setY(cuadro.getPosicion().getY()-2);
+                if(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();
+                    cuadro.getEnlaceVecino().setVecinoAbajo(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();
+                    conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceVecino().setVecinoArriba(cuadro);
+                }
+                visitados.Clear();
+                posicionAux.setX(cuadro.getPosicion().getX()+1);
+                posicionAux.setY(cuadro.getPosicion().getY()+1);
+                if(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();
+                    cuadro.getEnlaceVecino().setVecinoDerecha(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();
+                    conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceVecino().setVecinoIzquierda(cuadro);
+                }
+                visitados.Clear();
+                posicionAux.setX(cuadro.getPosicion().getX()-2);
+                posicionAux.setY(cuadro.getPosicion().getY());
+                if(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux) != null){
+                    visitados.Clear();
+                    cuadro.getEnlaceVecino().setVecinoIzquierda(conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux));
+                    visitados.Clear();
+                    conjunto2.getPrincipal().buscarCoordenadas(posicionAux,visitados,cuadroAux).getEnlaceVecino().setVecinoDerecha(cuadro);
+                }
+                visitados.Clear();
+            }
+        }
 
         public void vincularVecinos(ConjuntoCuadrado conjunto1, ConjuntoCuadrado conjunto2,int i){
             List<Cuadro> visitados = new List<Cuadro>();
