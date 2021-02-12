@@ -118,43 +118,7 @@ namespace ProyectoVSC{
             }
             
         }
-
-        public void recorrer(int tamano,int indiceActual,List<Cuadro> visitados){
-            visitados.Add(this);
-            if(indiceActual == tamano+1){
-                return;
-            }
-            if(this.indice != indiceActual){
-                if((this.enlaceConjunto.getArriba()!= null)&&(!visitados.Contains(this.enlaceConjunto.getArriba()))){
-                    this.enlaceConjunto.getArriba().recorrer(tamano,indiceActual,visitados);
-                }
-                if((this.enlaceConjunto.getDerecha()!= null)&&(!visitados.Contains(this.enlaceConjunto.getDerecha()))){
-                    this.enlaceConjunto.getDerecha().recorrer(tamano,indiceActual,visitados);
-                }
-                if((this.enlaceConjunto.getAbajo()!=  null)&&(!visitados.Contains(this.enlaceConjunto.getAbajo()))){
-                    this.enlaceConjunto.getAbajo().recorrer(tamano,indiceActual,visitados);
-                }
-                if((this.enlaceConjunto.getIzquierda()!= null)&&(!visitados.Contains(this.enlaceConjunto.getIzquierda()))){
-                    this.enlaceConjunto.getIzquierda().recorrer(tamano,indiceActual,visitados);
-                }
-            }else{
-                indiceActual += 1;
-                visitados.Clear();
-                if((this.enlaceConjunto.getArriba()!= null)&&(!visitados.Contains(this.enlaceConjunto.getArriba()))){
-                    this.enlaceConjunto.getArriba().recorrer(tamano,indiceActual,visitados);
-                }
-                if((this.enlaceConjunto.getDerecha()!= null)&&(!visitados.Contains(this.enlaceConjunto.getDerecha()))){
-                    this.enlaceConjunto.getDerecha().recorrer(tamano,indiceActual,visitados);
-                }
-                if((this.enlaceConjunto.getAbajo()!=  null)&&(!visitados.Contains(this.enlaceConjunto.getAbajo()))){
-                    this.enlaceConjunto.getAbajo().recorrer(tamano,indiceActual,visitados);
-                }
-                if((this.enlaceConjunto.getIzquierda()!= null)&&(!visitados.Contains(this.enlaceConjunto.getIzquierda()))){
-                    this.enlaceConjunto.getIzquierda().recorrer(tamano,indiceActual,visitados);
-                }
-            }
-        }
-    
+            
         public Cuadro buscarCuadro(int indice,List<Cuadro> visitados,Cuadro cuadro){
             visitados.Add(this);
             if(this.indice != indice){
